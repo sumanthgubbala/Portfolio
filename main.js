@@ -1,20 +1,22 @@
 let menuIcon= document.querySelector('#menu-icon');
 let navbar= document.querySelector('.navbar');
 
-menuIcon.onClick =() =>{
-    menuIcon.classList.toggle('fax-xmark')
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('fa-x');
     navbar.classList.toggle('active');
+  
 }
 
 let sections =document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
-window.onscroll = () =>{
+window.onscroll = () => {
     sections.forEach(sec => {
-        let top =window.scrollY ;
+        let top =window.scrollY;
         let offset =sec.offsetTop - 150;
         let height = sec.offsetHeight;
-        if(top >= offset && top <= offset + height ){
+        let id =sec.getAttribute('id');
+        if(top >= offset && top < offset + height ){
             navLinks.forEach.apply(links =>{
                 links.classList.remove('active');
                 document.querySelector('header nav a[herf*=' + id + ']').classList.add('active');
@@ -26,9 +28,34 @@ window.onscroll = () =>{
     header.classList.toggle('sticky'.window.scrollY > 100);
 
 
-    menuIcon.classList.remove('fax-xmark');
+    menuIcon.classList.remove('fa-x');
     navbar.classList.remove('active');
 
 
-}
+    
+
+};
+
+ScrollReveal({ 
+    distance:'80px',
+    duration: 2000,
+    delay : 200
+ });
+ ScrollReveal().reveal('.home-content , heading', { origin: 'top'});
+ ScrollReveal().reveal('.home-img, .services-contaioner , .portfolio-box , .contact form', { origin: 'buttom' });
+
+ ScrollReveal().reveal('.home-contact h1, .about-img', { orgin: 'left'});
+
+ ScrollReveal().reveal('.home-conatct p, .about-content', { orgin: 'right' });
+
+
+ const typed =new Typed('.multiple-text',{
+    strings: ['Frontend Devloper','Backend Developer','Full-Stack Developer','Machine Learning Developer'],
+    typeSpeed: 70,
+    backSpeed: 70,
+    backDelay: 1000,
+    loop:true
+ });
+
+
 

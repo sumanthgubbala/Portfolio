@@ -13,10 +13,10 @@
 
 }
 :root{
-    --bg-color: #191f36;
-    --text-color: #fff;
-    --main-color:#59B2F4;
-    --snd-bf-color:#262B40;
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --main-color:#4e5050;
+    --snd-bf-color:#d1d1d1;
 }
 html{
     font-size: 62.5%;
@@ -63,7 +63,7 @@ section{
 .navbar a:active{
     color: var(--text-color);
 }
-#menu-bar{
+#menu-icon{
     font-size: 3.6rem;
     color: var(--text-color);
     display: none;
@@ -398,12 +398,17 @@ span{
         padding: 1rem 3%;
 
         background: var(--bg-color);
-        border-top: 1rem solid rgba(0,0,0,.2);
+        border-top: .1rem solid rgba(0,0,0,.2);
         box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
         display: none;
     }
     .navbar.active{
         display: block;
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
     }
     .home{
         flex-direction: column;
